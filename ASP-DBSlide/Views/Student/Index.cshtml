@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ASP_DBSlide.Models.Student.StudentListItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gestion des étudiants</h1>
+
+<p>
+    <a asp-action="Create">Inscrire un nouvel étudiant</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                    @Html.ActionLink("Éditer", "Edit", new { id = item.Student_Id }, new { @class = "btn btn-secondary" }) |
+                @Html.ActionLink("Plus d'info", "Details", new { id = item.Student_Id }, new {@class="btn btn-primary"}) |
+                    @Html.ActionLink("Supprimer", "Delete", new { id = item.Student_Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

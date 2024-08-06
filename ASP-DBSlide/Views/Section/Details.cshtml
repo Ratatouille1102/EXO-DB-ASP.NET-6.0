@@ -1,0 +1,40 @@
+﻿@model ASP_DBSlide.Models.Section.SectionDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SectionDetailsViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Section_Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Section_Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Section_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Section_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Delegate)
+        </dt>
+        <dd>
+            <partial name="_StudentContactLink" for="@Model.Delegate" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <h2>Liste des étudiants</h2>
+    <partial name="_StudentShortList" for="@Model.Students" />
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Section_Id}) |
+    <a asp-action="Index">Back to List</a>
+</div>

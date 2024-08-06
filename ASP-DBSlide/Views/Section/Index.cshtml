@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ASP_DBSlide.Models.Section.SectionListItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Section_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Section_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Section_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Section_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Section_Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

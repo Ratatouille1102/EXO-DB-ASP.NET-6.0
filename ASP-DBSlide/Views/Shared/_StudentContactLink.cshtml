@@ -1,0 +1,5 @@
+﻿@model ASP_DBSlide.Models.Student.StudentListItem
+
+<div>
+    <a asp-action="Details" asp-controller="Student" asp-route-id="@Model.Student_Id">@Model.Last_Name @Model.First_Name</a>
+</div>

@@ -1,0 +1,17 @@
+﻿@model ASP_DBSlide.Models.Student.StudentDeleteForm
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Supprimer @Model.Last_Name @Model.First_Name inscrit en section @Model.Section_Id</h1>
+<div>
+    
+    <form asp-action="Delete">
+        @Html.HiddenFor(m => m.First_Name)
+        @Html.HiddenFor(m => m.Last_Name)
+        @Html.HiddenFor(m => m.Section_Id)
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-danger">Annuler</a>
+    </form>
+</div>

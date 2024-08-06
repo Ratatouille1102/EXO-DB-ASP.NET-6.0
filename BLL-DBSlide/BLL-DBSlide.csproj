@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>BLL_DBSlide</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common-DBSlide\Common-DBSlide.csproj" />
+    <ProjectReference Include="..\DAL-DBSlide\DAL-DBSlide.csproj" />
+  </ItemGroup>
+
+</Project>

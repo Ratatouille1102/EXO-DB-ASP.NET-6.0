@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ASP_DBSlide</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL-DBSlide\BLL-DBSlide.csproj" />
+    <ProjectReference Include="..\Common-DBSlide\Common-DBSlide.csproj" />
+    <ProjectReference Include="..\DAL-DBSlide\DAL-DBSlide.csproj" />
+  </ItemGroup>
+
+</Project>
