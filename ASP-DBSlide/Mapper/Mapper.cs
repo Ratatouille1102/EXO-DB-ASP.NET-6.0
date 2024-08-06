@@ -1,4 +1,5 @@
-﻿using ASP_DBSlide.Models.Section;
+﻿using ASP_DBSlide.Models.Group;
+using ASP_DBSlide.Models.Section;
 using ASP_DBSlide.Models.Student;
 using BLL_DBSlide.Entities;
 
@@ -147,5 +148,23 @@ namespace ASP_DBSlide.Mapper
             };
         }
         #endregion
+        #region StudentGroup
+        public static GroupDetailsViewModel ToDetails(this StudentGroup entity)
+        {
+            if(entity is null) throw new ArgumentNullException(nameof (entity));
+            return new GroupDetailsViewModel()
+            {
+                Name = entity.Name,
+                Students = entity.Students.Select(s => s.ToListItem())
+            };
+        }
+
+        public static StudentGroup ToBLL(this GroupCreateForm entity)
+        {
+            if (entity is null) throw new ArgumentNullException(nameof(entity));
+            return new StudentGroup(entity.Name);
+        } 
+        #endregion
+
     }
 }

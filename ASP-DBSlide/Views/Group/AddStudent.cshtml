@@ -1,0 +1,6 @@
+﻿@model IEnumerable<StudentListItem>
+
+    <form asp-action="AddStudent" asp-controller="Group">
+        <select name="student_id" asp-items="@Model.Select(m => new SelectListItem($"{m.Last_Name} {m.First_Name}", m.Student_Id.ToString()))"></select>
+        <button type="submit">Ajouter</button>
+    </form>
